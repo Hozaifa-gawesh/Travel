@@ -89,7 +89,7 @@ class OffersController extends GeneralController
     public function store(StoreOffer $request)
     {
         // Get data from request
-        $inputs = $request->all();
+        $inputs = $request->validated();
         // Get & Check Country
         $country = $this->country()->find($request->input('country_id'));
         // If Not Get Country Data
@@ -133,7 +133,7 @@ class OffersController extends GeneralController
         // Get and Check Data
         $data = $this->GetItem($id);
         // Get data from request
-        $inputs = $request->all();
+        $inputs = $request->validated();
         // Get & Check Country
         $country = $this->country()->find($request->input('country_id'));
         // If Not Get Country Data

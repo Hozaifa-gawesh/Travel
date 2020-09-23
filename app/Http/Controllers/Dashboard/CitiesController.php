@@ -44,7 +44,7 @@ class CitiesController extends GeneralController
         // Get and Check Data
         $data = $this->GetItem($id);
         // Get data from request
-        $inputs = $request->all();
+        $inputs = $request->validated();
         // Set Image In Inputs Request
         $inputs['image'] = $this->storeFile($request->file('image'), $this->path, 'image', 800, null, 400, null, 1, 1);
         // Store Data in DB
@@ -105,7 +105,7 @@ class CitiesController extends GeneralController
         // Check If Not Get Item
         if(!$item) abort(404);
         // Get Inputs Data From Request
-        $inputs = $request->all();
+        $inputs = $request->validated();
         // Set Image In Inputs Request
         $inputs['image'] = $this->updateFile($request->file('image'), $this->path, 'image', $item->image, 800, null, 400, null, 1, 1);
         // Update Data Item in DB

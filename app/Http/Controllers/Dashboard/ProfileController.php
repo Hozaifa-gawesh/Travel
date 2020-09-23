@@ -51,7 +51,7 @@ class ProfileController extends GeneralController
         // Get Item By ID
         $data = $this->GetItem($this->admin()->id);
         // Get all Data from request
-        $inputs = $request->all();
+        $inputs = $request->validated();
         // Set Password if existing in Data request
         if(!empty($request->input('password'))) {
             $inputs['password'] =  bcrypt($request->input('password'));

@@ -41,7 +41,7 @@ class SettingController extends GeneralController
         // Check Data
         if(!$data) abort(404);
         // Get data from Request
-        $inputs = $request->all();
+        $inputs = $request->validated();
         // Set Image in inputs data
         $inputs['logo'] = $this->updateFile($request->file('logo'), $this->path, 'image', $data->logo);
         $inputs['logo_white'] = $this->updateFile($request->file('logo_white'), $this->path, 'image', $data->logo_white);

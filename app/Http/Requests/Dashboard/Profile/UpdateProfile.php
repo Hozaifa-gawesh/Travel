@@ -40,7 +40,8 @@ class UpdateProfile extends FormRequest
                 'min:10',
                 Rule::unique('admins', 'phone')->ignore($admin)
             ],
-            'password' => 'sometimes|max:191'
+            'password' => 'sometimes|max:191',
+            'image' => 'nullable|image|mimes:jpeg,jpg,png',
         ];
     }
 }

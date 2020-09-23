@@ -120,7 +120,7 @@ class CitiesOfferController extends GeneralController
         // Get and Check Data
         $data = $this->GetItem($id);
         // Get Inputs Request
-        $inputs = $request->all();
+        $inputs = $request->validated();
         // Get Hotels
         $hotel = $this->filterHotels($data, $request)->find($inputs['hotel_id']);
         // Check If Not Get Hotel

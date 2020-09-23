@@ -70,7 +70,7 @@ class HotelsController extends GeneralController
     public function store(StoreHotel $request)
     {
         // Get data from request
-        $inputs = $request->all();
+        $inputs = $request->validated();
         // Get City
         $city = $this->checkCity($inputs);
         // Check If Not Get City
@@ -118,7 +118,7 @@ class HotelsController extends GeneralController
         // Get and Check Data
         $data = $this->GetItem($id);
         // Get data from request
-        $inputs = $request->all();
+        $inputs = $request->validated();
         // Get City
         $city = $this->checkCity($inputs);
         // Check If Not Get City

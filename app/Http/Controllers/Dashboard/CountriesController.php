@@ -39,7 +39,7 @@ class CountriesController extends GeneralController
     public function store(StoreCountry $request)
     {
         // Get data from request
-        $inputs = $request->all();
+        $inputs = $request->validated();
         // Store Data in DB
         $this->model->create($inputs);
         $this->flash('success', __('lang.stored'));
@@ -73,7 +73,7 @@ class CountriesController extends GeneralController
         // Get and Check Data
         $data = $this->GetItem($id);
         // Get data from request
-        $inputs = $request->all();
+        $inputs = $request->validated();
         // Update Data in DB
         $data->update($inputs);
         $this->flash('success', __('lang.updated'));
